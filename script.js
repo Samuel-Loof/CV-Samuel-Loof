@@ -1,6 +1,5 @@
 let slideIndex = 1;
 
-// Function to change slides when arrow buttons are clicked
 function changeSlide(n) {
   showSlide((slideIndex += n));
 }
@@ -9,10 +8,9 @@ function currentSlide(n) {
   showSlide((slideIndex = n));
 }
 
-// Main function that handles showing/hiding slides and updating dots
 function showSlide(n) {
-  let slides = document.getElementsByClassName("slide"); // Get all slide elements
-  let dots = document.getElementsByClassName("dot"); // Get all dot elements
+  let slides = document.getElementsByClassName("slide");
+  let dots = document.getElementsByClassName("dot");
 
   // If we go past the last slide, wrap to first slide
   if (n > slides.length) {

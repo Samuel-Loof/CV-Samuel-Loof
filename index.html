@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="CV.css" />
   </head>
 
+  <script src="script.js"></script>
+
   <body>
     <div class="main-grid">
       <header>
@@ -102,45 +104,6 @@
           </p>
         </section>
 
-        <!-- Image slideshow showcasing projects/achievements -->
-        <!-- NEW: Updated slideshow with image sources and removed paragraphs -->
-        <section class="slideshow-container">
-          <div class="slide active">
-            <!-- NEW: Added src="image1.jpg" for first slide -->
-            <img src="image1.jpg" alt="Web development project" />
-            <div class="slide-content">
-              <h3>Web Development Projects</h3>
-            </div>
-          </div>
-
-          <div class="slide">
-            <!-- NEW: Added src="image2.jpg" for second slide -->
-            <img src="image2.jpg" alt=".NET application project" />
-            <div class="slide-content">
-              <h3>.NET Applications</h3>
-            </div>
-          </div>
-
-          <div class="slide">
-            <!-- NEW: Added src="image3.jpg" for third slide -->
-            <img src="image3.jpg" alt="Database management project" />
-            <div class="slide-content">
-              <h3>Database Management</h3>
-            </div>
-          </div>
-
-          <!-- Navigation arrows -->
-          <button class="prev" onclick="changeSlide(-1)">❮</button>
-          <button class="next" onclick="changeSlide(1)">❯</button>
-
-          <!-- Dots indicator -->
-          <div class="dots-container">
-            <span class="dot active" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-          </div>
-        </section>
-
         <section class="experience">
           <h2>Work Experience</h2>
           <h3>Else AB - Software Developer</h3>
@@ -163,8 +126,33 @@
           <p>Aug 2012 - Jun 2015</p>
         </section>
       </div>
+
+      <section class="slideshow-container">
+        <h2 class="sr-only">Project Portfolio</h2>
+        <div class="slide active">
+          <img src="workoutplanner1.webp" alt="Workout planner" />
+          <div class="slide-content"></div>
+        </div>
+
+        <div class="slide">
+          <img src="workoutplanner2.webp" alt="Workout planner" />
+          <div class="slide-content"></div>
+        </div>
+
+        <div class="slide">
+          <img src="healthcare.webp" alt="Health care project" />
+          <div class="slide-content"></div>
+        </div>
+
+        <button class="prev" onclick="changeSlide(-1)">❮</button>
+        <button class="next" onclick="changeSlide(1)">❯</button>
+
+        <div class="dots-container">
+          <span class="dot active" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+      </section>
     </div>
   </body>
 </html>
-
-<script src="script.js"></script>

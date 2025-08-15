@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const slides = document.querySelectorAll(".slide");
   const dots = document.querySelectorAll(".dot");
 
-  // Initialize slideshow
   showSlide(currentSlide);
 
   // Next/previous controls

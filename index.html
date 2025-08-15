@@ -19,10 +19,48 @@
   <body>
     <div class="main-grid">
       <header>
-        <div class="header-text">
+        <div class="slideshow-container">
+          <h2 class="sr-only">Project Portfolio</h2>
+          <div class="slide active">
+            <img src="workoutplanner1.webp" alt="" />
+            <div class="slide-content">
+              <h3>Workout Planner App</h3>
+              <p>React-based fitness application with workout tracking</p>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="workoutplanner2.webp" alt="Health care project" />
+            <div class="slide-content">
+
+              <div class="slide">
+                <img src="DrinkingGameImage.webp" alt="Social game project"/>
+                <p>C# Yaml made mobile app game</p>
+              </div>
+
+            </div>
+          </div>
+          <div class="slide">
+            <img src="healthcare.webp" alt="E-commerce project" />
+            <div class="slide-content">
+              <h3>Healthcare Management System</h3>
+              <p>.NET Core solution for patient data management</p>
+            </div>
+          </div>
+          <button class="prev">❮</button>
+          <button class="next">❯</button>
+          <div class="dots-container">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+
+        <div class="header-content">
           <h1>Samuel Lööf</h1>
           <p class="occupation">System Developer</p>
+          </p>
         </div>
+
         <div class="header-image">
           <img
             id="selfie"
@@ -106,53 +144,50 @@
 
         <section class="experience">
           <h2>Work Experience</h2>
-          <h3>Else AB - Software Developer</h3>
-          <p>Feb 2025 - Dec 2025</p>
-          <h3>Arterios AB - Production Coordinator</h3>
-          <p>Oct 2022 - Mar 2023</p>
-          <h3>Volvo Cars - Assembly Line Worker</h3>
-          <p>Aug 2021 - Oct 2022</p>
-          <h3>McDonalds Supervisor/Team leader</h3>
-          <p>Jul 2016 - Aug 2021</p>
+          <div class="job">
+            <h3>Else AB - Software Developer</h3>
+            <p>Feb 2025 - Dec 2025</p>
+            <p class="job-desc">
+              Developed enterprise applications using ASP.NET Core and React
+            </p>
+          </div>
+          <div class="job">
+            <h3>Arterios AB - Production Coordinator</h3>
+            <p>Oct 2022 - Mar 2023</p>
+            <p class="job-desc">
+              Optimized production workflows and managed team schedules
+            </p>
+          </div>
+          <div class="job">
+            <h3>Volvo Cars - Assembly Line Worker</h3>
+            <p>Aug 2021 - Oct 2022</p>
+          </div>
+          <div class="job">
+            <h3>McDonalds Supervisor/Team leader</h3>
+            <p>Jul 2016 - Aug 2021</p>
+            <p class="job-desc">Managed shifts and trained new team members</p>
+          </div>
         </section>
 
         <section class="education">
           <h2>Education</h2>
-          <h3>Teknikhögskolan - .Net Developer</h3>
-          <p>Aug 2023 - May 2025</p>
-          <h3>Yrgo - Ekonomi och redovisningskonsult</h3>
-          <p>Aug 2015 - May 2016</p>
-          <h3>Hvitfeldtska gymnasiet - Ekonomi</h3>
-          <p>Aug 2012 - Jun 2015</p>
+          <div class="edu">
+            <h3>Teknikhögskolan - .Net Developer</h3>
+            <p>Aug 2023 - May 2025</p>
+            <p class="edu-desc">
+              Specialized in C# and .NET ecosystem development
+            </p>
+          </div>
+          <div class="edu">
+            <h3>Yrgo - Ekonomi och redovisningskonsult</h3>
+            <p>Aug 2015 - May 2016</p>
+          </div>
+          <div class="edu">
+            <h3>Hvitfeldtska gymnasiet - Ekonomi</h3>
+            <p>Aug 2012 - Jun 2015</p>
+          </div>
         </section>
       </div>
-
-      <section class="slideshow-container">
-        <h2 class="sr-only">Project Portfolio</h2>
-        <div class="slide active">
-          <img src="workoutplanner1.webp" alt="Workout planner" />
-          <div class="slide-content"></div>
-        </div>
-
-        <div class="slide">
-          <img src="workoutplanner2.webp" alt="Workout planner" />
-          <div class="slide-content"></div>
-        </div>
-
-        <div class="slide">
-          <img src="healthcare.webp" alt="Health care project" />
-          <div class="slide-content"></div>
-        </div>
-
-        <button class="prev" onclick="changeSlide(-1)">❮</button>
-        <button class="next" onclick="changeSlide(1)">❯</button>
-
-        <div class="dots-container">
-          <span class="dot active" onclick="currentSlide(1)"></span>
-          <span class="dot" onclick="currentSlide(2)"></span>
-          <span class="dot" onclick="currentSlide(3)"></span>
-        </div>
-      </section>
     </div>
   </body>
 </html>

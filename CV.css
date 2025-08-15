@@ -283,7 +283,7 @@ a:hover {
   border: 0;
 }
 
-/* Responsive adjustments */
+/* Responsive design */
 @media (max-width: 1128px) and (min-width: 894px) {
   header {
     grid-template-columns: 1fr;

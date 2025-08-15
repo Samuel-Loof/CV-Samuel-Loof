@@ -1,3 +1,18 @@
+:root {
+  /* Dark theme color palette */
+  --dark-bg: #121212;
+  --card-bg: #1e1e1e;
+  --card-border: #2d2d2d;
+  --text-primary: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --accent-primary: #3498db;
+  --accent-secondary: #2980b9;
+  --header-gradient-start: #0a1929;
+  --header-gradient-end: #143d5d;
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --hover-blue: #0973d6;
+}
+
 * {
   box-sizing: border-box;
   margin: 5px;
@@ -9,8 +24,8 @@ body {
   font-family: Arial, sans-serif;
   padding: 0;
   margin: 0;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: var(--dark-bg);
+  color: var(--text-primary);
 }
 
 .main-grid {
@@ -22,27 +37,29 @@ body {
     "sidebar main";
   gap: 20px;
   min-height: 100vh;
-  max-width: 1600px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 20px;
 }
 
 header {
   grid-area: header;
-  color: #fff;
+  color: var(--text-primary);
   padding: 20px;
   background: linear-gradient(
     135deg,
-    rgb(209, 221, 223) 0%,
-    rgb(20, 156, 190) 100%
+    rgb(150, 160, 162) 0%,
+    rgb(10, 100, 125) 100%
   );
+
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   grid-template-areas: "slideshow header-content";
   gap: 20px;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px var(--shadow-color);
   align-items: center;
+  border: 1px solid var(--card-border);
 }
 
 .header-content {
@@ -64,41 +81,25 @@ header {
   width: 200px;
   height: 200px;
   object-fit: cover;
-  border: 3px solid white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 8px var(--shadow-color);
 }
 
-img {
-  -webkit-mask-image: linear-gradient(
-    45deg,
-    #000 25%,
-    rgba(0, 0, 0, 0.2) 50%,
-    #000 75%
-  );
-  mask-image: linear-gradient(
-    45deg,
-    #000 25%,
-    rgba(0, 0, 0, 0.2) 50%,
-    #000 75%
-  );
-  -webkit-mask-size: 800%;
-  mask-size: 800%;
-  -webkit-mask-position: 0;
-  mask-position: 0;
-  transition: mask-position 2s ease, -webkit-mask-position 2s ease;
+#selfie {
+  transition: opacity 0.35s ease;
 }
 
-img:hover {
-  -webkit-mask-position: 120%;
-  mask-position: 120%;
-  opacity: 1;
+#selfie:hover {
+  opacity: 0.8;
+  transform: none;
+  filter: none;
 }
 
 h1 {
   font-size: 3.5rem;
   color: white;
-  -webkit-text-stroke: 1px #f8f8f8;
-  text-shadow: 0px 2px 4px rgb(12, 0, 0);
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
   margin: 0;
 }
 
@@ -106,6 +107,7 @@ h1 {
   font-size: 1.5rem;
   margin: 10px 0 0 0;
   font-weight: bold;
+  color: var(--text-secondary);
 }
 
 .container-left {
@@ -122,12 +124,12 @@ h1 {
   position: relative;
   max-width: 100%;
   background-color: transparent;
-  box-shadow: none !important;
   border-radius: 5px;
   overflow: hidden;
   grid-area: slideshow;
   height: 400px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: none;
+  border: none;
 }
 
 .slide {
@@ -144,8 +146,6 @@ h1 {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  mask: none;
-  -webkit-mask: none;
 }
 
 .slide-content {
@@ -156,7 +156,7 @@ h1 {
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
   color: white;
   padding: 40px 20px 20px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(10, 10, 10, 0.7);
 }
 
 .slide h3 {
@@ -206,7 +206,6 @@ h1 {
   margin-right: 30px;
   z-index: 10;
 }
-
 .dot {
   cursor: pointer;
   height: 15px;
@@ -217,7 +216,6 @@ h1 {
   display: inline-block;
   transition: background-color 0.3s ease;
 }
-
 .dot.active,
 .dot:hover {
   background-color: #3498db;
@@ -230,12 +228,13 @@ h1 {
 .language,
 .bio,
 .ref {
-  background-color: #fff;
+  background-color: var(--card-bg);
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px var(--shadow-color);
   margin-bottom: 20px;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, border 0.3s ease;
+  border: 1px solid var(--card-border);
 }
 
 .contact:hover,
@@ -245,7 +244,8 @@ h1 {
 .language:hover,
 .bio:hover,
 .ref:hover {
-  box-shadow: 0 0 20px #0973d6;
+  box-shadow: 0 0 20px var(--hover-blue);
+  border: 1px solid var(--hover-blue);
 }
 
 .ref {
@@ -254,22 +254,24 @@ h1 {
 
 h2,
 h3 {
-  color: #3498db;
+  color: var(--accent-primary);
 }
 
 h2 {
   margin: 0 0 15px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--card-border);
 }
 
 a {
-  color: #3498db;
+  color: var(--accent-primary);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
   text-decoration: underline;
-  color: #2980b9;
+  color: var(--accent-secondary);
 }
 
 .sr-only {
@@ -284,7 +286,7 @@ a:hover {
   border: 0;
 }
 
-/* Responsive design */
+/* Responsive layout */
 @media (max-width: 1128px) and (min-width: 894px) {
   header {
     grid-template-columns: 1fr;
